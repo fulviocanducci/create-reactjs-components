@@ -4,6 +4,7 @@
   "description": "Options Menu",
   "version": "1.0.0",
   "publisher": "canducci",
+  "ico": "images/logo-three.png",
   "engines": {
     "vscode": "^1.48.0"
   },

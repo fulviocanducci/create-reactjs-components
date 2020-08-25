@@ -1,65 +1,28 @@
 # Create React Component
 
-This is the README for your extension "canducci". After writing up a brief description, we recommend including the following sections.
+Create React Component  for VS Code
 
-## Features
+[![Version](https://vsmarketplacebadge.apphb.com/version/canducci.create-reactjs-components.svg)](https://vsmarketplacebadge.apphb.com/version-short/canducci.create-reactjs-components.svg)
+[![Install](https://vsmarketplacebadge.apphb.com/installs/canducci.create-reactjs-components.svg)](https://vsmarketplacebadge.apphb.com/installs-short/canducci.create-reactjs-components.svg)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/canducci.create-reactjs-components.svg)](https://vsmarketplacebadge.apphb.com/downloads-short/canducci.create-reactjs-components.svg)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/canducci.create-reactjs-components.svg)](https://vsmarketplacebadge.apphb.com/rating-short/canducci.create-reactjs-components.svg)
+[![Rating(Star)](https://vsmarketplacebadge.apphb.com/rating-star/canducci.create-reactjs-components.svg)](https://vsmarketplacebadge.apphb.com/rating-star/canducci.create-reactjs-components.svg)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+# Installation
 
-For example if there is an image subfolder under your extension project workspace:
+### Visual Studio Marketplace
 
-\!\[feature X\]\(images/feature-x.png\)
+Paste the following command and press `Enter`:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```shell
+ext install canducci.create-reactjs-components
+```
 
-## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+# Supported languages (file extensions)
 
-## Extension Settings
+- JavaScript (.js)
+- JavaScript React (.jsx)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+# Usage
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
