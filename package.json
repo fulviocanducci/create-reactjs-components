@@ -1,0 +1,85 @@
+{
+  "name": "create-reactjs-components",
+  "displayName": "create-reactjs-components",
+  "description": "Options Menu",
+  "version": "1.0.0",
+  "publisher": "canducci",
+  "engines": {
+    "vscode": "^1.48.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onCommand:canducci.arrowFunctionComponentJs",
+    "onCommand:canducci.functionComponentJs",
+    "onCommand:canducci.arrowFunctionComponentJsx",
+    "onCommand:canducci.functionComponentJsx"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "canducci.arrowFunctionComponentJs",
+        "title": "React Arrow Function Component (js)"
+      },
+      {
+        "command": "canducci.functionComponentJs",
+        "title": "React Function Component (js)"
+      },
+      {
+        "command": "canducci.arrowFunctionComponentJsx",
+        "title": "React Arrow Function Component (jsx)"
+      },
+      {
+        "command": "canducci.functionComponentJsx",
+        "title": "React Function Component (jsx)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "canducci.arrowFunctionComponentJs",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.functionComponentJs",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.arrowFunctionComponentJsx",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.functionComponentJsx",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.48.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^14.0.27",
+    "eslint": "^7.6.0",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.0.1",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.4.0"
+  }
+}
