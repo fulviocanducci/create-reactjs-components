@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 
+function createFolderComponents() {}
+
 export function getProjetctRoot(): string {
   return (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 }
@@ -15,7 +17,7 @@ export function existsDir(dir: string): boolean {
 
 export function createDir(dir: string): boolean {
   try {
-    fs.mkdirSync(dir);
+    fs.mkdirSync(dir, { recursive: true });
     return true;
   } catch (error) {}
   return false;

@@ -26,3 +26,16 @@ ext install canducci.create-reactjs-components
 
 # Usage
 
+In the Context Menu choose:
+
+* React Arrow Function Component (js)
+* React Function Component (js)
+* React Arrow Function Component (jsx)
+* React Function Component (jsx)
+
+where a component is created in the "components" folder
+      
+### Example:
+
+[![Image](https://raw.githubusercontent.com/fulviocanducci/create-reactjs-components/master/images/menu.png)]()
+
