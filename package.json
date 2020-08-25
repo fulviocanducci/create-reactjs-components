@@ -2,14 +2,28 @@
   "name": "create-reactjs-components",
   "displayName": "create-reactjs-components",
   "description": "Options Menu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "canducci",
-  "ico": "images/logo-three.png",
+  "icon": "images/logo-three.png",
   "engines": {
     "vscode": "^1.48.0"
   },
+  "author": {
+    "email": "fulviocanducci@hotmail.com",
+    "name": "Fúlvio Cezar Canducci Dias"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fulviocanducci/create-reactjs-components"
+  },
   "categories": [
     "Snippets"
+  ],
+  "keywords": [
+    "react",
+    "reactjs",
+    "js",
+    "jsx"
   ],
   "activationEvents": [
     "onCommand:canducci.arrowFunctionComponentJs",
