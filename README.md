@@ -34,8 +34,12 @@ In the Context Menu choose:
 * React Function Component (jsx)
 
 where a component is created in the "components" folder
-      
-### Example:
+
+### Menu:
 
 [![Image](https://raw.githubusercontent.com/fulviocanducci/create-reactjs-components/master/images/menu.png)]()
+
+### Example:
+
+[![Gif](https://raw.githubusercontent.com/fulviocanducci/create-reactjs-components/master/images/example.gif)]()
 
