@@ -1,14 +1,20 @@
-import * as vscode from 'vscode';
 import * as fs from 'fs';
+import * as vscode from 'vscode';
 
-function createFolderComponents() {}
+export function mergerDir(...values: Array<string>): string {
+  return values.join('');
+}
 
 export function getProjetctRoot(): string {
   return (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 }
 
-export function getProjectComponentFolder(name: string | undefined): string {
-  return `${getProjetctRoot()}/src/components/${name}`;
+export function getProjectComponentFolder(name: string, sep: string): string {
+  return mergerDir(getProjetctRoot(), sep, 'src', sep, 'components', sep, name);
+}
+
+export function getProjectContextFolder(name: string, sep: string): string {
+  return mergerDir(getProjetctRoot(), sep, 'src', sep, 'contexts', sep, name);
 }
 
 export function existsDir(dir: string): boolean {

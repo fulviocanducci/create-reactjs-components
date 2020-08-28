@@ -1,8 +1,8 @@
 {
   "name": "create-reactjs-components",
   "displayName": "create-reactjs-components",
-  "description": "Options Menu",
-  "version": "1.0.1",
+  "description": "Create Component/Context Explorer Context",
+  "version": "1.1.0",
   "publisher": "canducci",
   "icon": "images/logo-three.png",
   "engines": {
@@ -29,7 +29,11 @@
     "onCommand:canducci.arrowFunctionComponentJs",
     "onCommand:canducci.functionComponentJs",
     "onCommand:canducci.arrowFunctionComponentJsx",
-    "onCommand:canducci.functionComponentJsx"
+    "onCommand:canducci.functionComponentJsx",
+    "onCommand:canducci.createContextArrowFunctionJs",
+    "onCommand:canducci.createContextFunctionJs",
+    "onCommand:canducci.createContextArrowFunctionJsx",
+    "onCommand:canducci.createContextFunctionJsx"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -43,33 +47,69 @@
         "title": "React Function Component (js)"
       },
       {
+        "command": "canducci.createContextArrowFunctionJs",
+        "title": "React Arrow Function Context (js)"
+      },
+      {
+        "command": "canducci.createContextFunctionJs",
+        "title": "React Function Context (js)"
+      },
+      {
         "command": "canducci.arrowFunctionComponentJsx",
         "title": "React Arrow Function Component (jsx)"
       },
       {
         "command": "canducci.functionComponentJsx",
         "title": "React Function Component (jsx)"
+      },
+      {
+        "command": "canducci.createContextArrowFunctionJsx",
+        "title": "React Arrow Function Context (jsx)"
+      },
+      {
+        "command": "canducci.createContextFunctionJsx",
+        "title": "React Function Context (jsx)"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "canducci.arrowFunctionComponentJs",
-          "group": "2_modification",
+          "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "canducci.functionComponentJs",
-          "group": "2_modification",
+          "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "canducci.arrowFunctionComponentJsx",
-          "group": "2_modification",
+          "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
           "command": "canducci.functionComponentJsx",
+          "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.createContextArrowFunctionJs",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.createContextFunctionJs",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.createContextArrowFunctionJsx",
+          "group": "2_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.createContextFunctionJsx",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
         }

@@ -1,5 +1,21 @@
-import { aFctComponent, fctComponent } from './base/index';
-const arrowFunctionComponentJs = (name: string) => aFctComponent(name, 'js');
-const functionComponentJs = (name: string) => fctComponent(name, 'js');
+import {
+  arrowFunctionComponentBase,
+  createContextArrowFunctionBase,
+  createContextFunctionBase,
+  functionComponentBase,
+} from './base/index';
+const arrowFunctionComponentJs = (name: string) =>
+  arrowFunctionComponentBase(name, 'js');
+const functionComponentJs = (name: string) => functionComponentBase(name, 'js');
 
-export { functionComponentJs, arrowFunctionComponentJs };
+const createContextArrowFunctionJs = (name: string) =>
+  createContextArrowFunctionBase(name, 'js');
+const createContextFunctionJs = (name: string) =>
+  createContextFunctionBase(name, 'js');
+
+export {
+  functionComponentJs,
+  arrowFunctionComponentJs,
+  createContextArrowFunctionJs,
+  createContextFunctionJs,
+};

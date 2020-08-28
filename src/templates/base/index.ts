@@ -1,10 +1,11 @@
 import { IComponentReturn } from './types';
 
-export function fctComponent(
+export function functionComponentBase(
   name: string,
   extension: string
 ): IComponentReturn {
   return {
+    title: 'Component',
     extension: extension,
     content: `
 import React from 'react';
@@ -20,11 +21,12 @@ export default ${name};
   };
 }
 
-export function aFctComponent(
+export function arrowFunctionComponentBase(
   name: string,
   extension: string
 ): IComponentReturn {
   return {
+    title: 'Component',
     extension: extension,
     content: `
 import React from 'react';
@@ -36,6 +38,56 @@ const ${name} = () => {
 }
 
 export default ${name};
+`,
+  };
+}
+
+export function createContextArrowFunctionBase(
+  name: string,
+  extension: string
+): IComponentReturn {
+  return {
+    title: 'Context',
+    extension: extension,
+    content: `  
+import React, { createContext } from "react";
+
+const ${name}Context = createContext();
+
+const ${name}ContextProvider = ({ children }) => {
+  return (
+    <${name}Context.Provider value={{ }}>
+      {children}
+    </${name}Context.Provider>
+  );
+}
+
+export default ${name}ContextProvider;
+`,
+  };
+}
+
+export function createContextFunctionBase(
+  name: string,
+  extension: string
+): IComponentReturn {
+  return {
+    title: 'Context',
+    extension: extension,
+    content: `  
+import React, { createContext } from "react";
+
+const ${name}Context = createContext();
+
+function ${name}ContextProvider({ children }) {
+  return (
+    <${name}Context.Provider value={{ }}>
+      {children}
+    </${name}Context.Provider>
+  );
+}
+
+export default ${name}ContextProvider;
 `,
   };
 }

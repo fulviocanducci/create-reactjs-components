@@ -1,1 +1,6 @@
 https://www.robinwieruch.de/react-function-component
+
+// if (args == null) {
+    //   args = { _fsPath: vscode.workspace.rootPath };
+    // }
+    // let incomingpath: string = args._fsPath;

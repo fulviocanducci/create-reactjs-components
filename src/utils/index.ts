@@ -1,15 +1,19 @@
+import * as path from 'path';
 import * as vscode from 'vscode';
-
 import {
-  getProjectComponentFolder,
-  optionsFileName,
-  existsDir,
-  createFile,
   createDir,
+  createFile,
+  existsDir,
+  mergerDir,
   openFileCreated,
+  optionsFileName,
 } from './operations';
 
-async function createComponent(args: any, callBack: Function) {
+async function createComponent(
+  args: any,
+  callBackTemplate: Function,
+  callBackFolder: Function
+) {
   const {
     showInputBox,
     showErrorMessage,
@@ -19,17 +23,17 @@ async function createComponent(args: any, callBack: Function) {
   if (!name) {
     showErrorMessage('Operation canceled !!!');
   } else {
-    const dir = getProjectComponentFolder(name);
-    const { content, extension } = callBack(name);
-    const dirFile = `${dir}/index.${extension}`;
+    const dir = callBackFolder(name, path.sep);
+    const { content, extension, title } = callBackTemplate(name);
+    const dirFile = mergerDir(dir, path.sep, 'index.', extension);
     try {
       if (!existsDir(dir)) {
         createDir(dir);
         createFile(dirFile, content);
         openFileCreated(dirFile);
-        showInformationMessage('Component successfully created.');
+        showInformationMessage(`${title} successfully created.`);
       } else {
-        showInformationMessage('Component exists');
+        showInformationMessage(`${title} exists`);
       }
     } catch (error) {
       showInformationMessage(error);
