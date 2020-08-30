@@ -4,3 +4,7 @@ https://www.robinwieruch.de/react-function-component
 //   args = { _fsPath: vscode.workspace.rootPath };
 // }
 // let incomingpath: string = args._fsPath;
+
+https://code.visualstudio.com/api/references/contribution-points#contributes.views
+
+https://code.visualstudio.com/api/references/contribution-points#contributes.commands

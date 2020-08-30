@@ -2,7 +2,7 @@
   "name": "create-reactjs-components",
   "displayName": "create-reactjs-components",
   "description": "Create Component/Context Explorer Context",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "canducci",
   "icon": "images/logo-three.png",
   "engines": {
@@ -27,17 +27,17 @@
   ],
   "activationEvents": [
     "onCommand:canducci.arrowFunctionComponentJs",
-    "onCommand:canducci.functionComponentJs",
     "onCommand:canducci.arrowFunctionComponentJsx",
-    "onCommand:canducci.functionComponentJsx",
-    "onCommand:canducci.createContextArrowFunctionJs",
-    "onCommand:canducci.createContextFunctionJs",
-    "onCommand:canducci.createContextArrowFunctionJsx",
-    "onCommand:canducci.createContextFunctionJsx",
     "onCommand:canducci.arrowFunctionComponentTs",
+    "onCommand:canducci.arrowFunctionContextTs",
+    "onCommand:canducci.functionComponentJs",
+    "onCommand:canducci.functionComponentJsx",
     "onCommand:canducci.functionComponentTs",
     "onCommand:canducci.functionContextTs",
-    "onCommand:canducci.arrowFunctionContextTs"
+    "onCommand:canducci.createContextArrowFunctionJs",
+    "onCommand:canducci.createContextArrowFunctionJsx",
+    "onCommand:canducci.createContextFunctionJsx",
+    "onCommand:canducci.createContextFunctionJs"
   ],
   "main": "./out/extension.js",
   "contributes": {
