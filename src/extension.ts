@@ -11,6 +11,12 @@ import {
   createContextFunctionJsx,
   functionComponentJsx,
 } from './templates/jsx';
+import {
+  arrowFunctionComponentTs,
+  arrowFunctionContextTs,
+  functionComponentTs,
+  functionContextTs,
+} from './templates/tsx';
 import createComponent from './utils/index';
 import {
   getProjectComponentFolder,
@@ -91,6 +97,39 @@ export function activate(context: vscode.ExtensionContext) {
         await createComponent(
           args,
           createContextFunctionJsx,
+          getProjectContextFolder
+        )
+    ),
+    /* React Typescript*/
+    registerCommand(
+      'canducci.arrowFunctionComponentTs',
+      async (args: any) =>
+        await createComponent(
+          args,
+          arrowFunctionComponentTs,
+          getProjectComponentFolder
+        )
+    ),
+    registerCommand(
+      'canducci.functionComponentTs',
+      async (args: any) =>
+        await createComponent(
+          args,
+          functionComponentTs,
+          getProjectComponentFolder
+        )
+    ),
+    registerCommand(
+      'canducci.functionContextTs',
+      async (args: any) =>
+        await createComponent(args, functionContextTs, getProjectContextFolder)
+    ),
+    registerCommand(
+      'canducci.arrowFunctionContextTs',
+      async (args: any) =>
+        await createComponent(
+          args,
+          arrowFunctionContextTs,
           getProjectContextFolder
         )
     ),
