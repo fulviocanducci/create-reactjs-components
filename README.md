@@ -41,7 +41,10 @@ In the Context Menu choose:
 - `React Stateless Function Context (jsx)`
 - `React Stateless Function Context (tsx)`
 
-where a component is created in the "components" folder
+### Note:
+
+- Where a component is created in the **_components_** folder.
+- Where a context api is created in the **_contexts_** folder.
 
 ### Menu:
 
