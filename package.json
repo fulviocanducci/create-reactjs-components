@@ -1,8 +1,8 @@
 {
   "name": "create-reactjs-components",
   "displayName": "create-reactjs-components",
-  "description": "Create Component/Context Explorer Context",
-  "version": "1.2.0",
+  "description": "Create Component and Context",
+  "version": "1.2.1",
   "publisher": "canducci",
   "icon": "images/logo-three.png",
   "engines": {
@@ -12,145 +12,151 @@
     "email": "fulviocanducci@hotmail.com",
     "name": "Fúlvio Cezar Canducci Dias"
   },
+  "bugs": {
+    "email": "fulviocanducci@hotmail.com",
+    "url": "https://github.com/fulviocanducci/create-reactjs-components/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fulviocanducci/create-reactjs-components"
   },
   "categories": [
+    "Extension Packs",
     "Snippets"
   ],
   "keywords": [
     "react",
     "reactjs",
     "js",
-    "jsx"
+    "jsx",
+    "tsx"
   ],
   "activationEvents": [
-    "onCommand:canducci.arrowFunctionComponentJs",
-    "onCommand:canducci.arrowFunctionComponentJsx",
-    "onCommand:canducci.arrowFunctionComponentTs",
-    "onCommand:canducci.arrowFunctionContextTs",
-    "onCommand:canducci.functionComponentJs",
-    "onCommand:canducci.functionComponentJsx",
-    "onCommand:canducci.functionComponentTs",
-    "onCommand:canducci.functionContextTs",
-    "onCommand:canducci.createContextArrowFunctionJs",
-    "onCommand:canducci.createContextArrowFunctionJsx",
-    "onCommand:canducci.createContextFunctionJsx",
-    "onCommand:canducci.createContextFunctionJs"
+    "onCommand:canducci.js.component",
+    "onCommand:canducci.js.statelessComponent",
+    "onCommand:canducci.js.context",
+    "onCommand:canducci.js.statelessContext",
+    "onCommand:canducci.jsx.component",
+    "onCommand:canducci.jsx.statelessComponent",
+    "onCommand:canducci.jsx.context",
+    "onCommand:canducci.jsx.statelessContext",
+    "onCommand:canducci.tsx.component",
+    "onCommand:canducci.tsx.statelessComponent",
+    "onCommand:canducci.tsx.context",
+    "onCommand:canducci.tsx.statelessContext"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "canducci.arrowFunctionComponentJs",
-        "title": "React Arrow Function Component (js)"
-      },
-      {
-        "command": "canducci.functionComponentJs",
+        "command": "canducci.js.component",
         "title": "React Function Component (js)"
       },
       {
-        "command": "canducci.createContextArrowFunctionJs",
-        "title": "React Arrow Function Context (js)"
+        "command": "canducci.js.statelessComponent",
+        "title": "React Stateless Function Component (js)"
       },
       {
-        "command": "canducci.createContextFunctionJs",
+        "command": "canducci.js.context",
         "title": "React Function Context (js)"
       },
       {
-        "command": "canducci.arrowFunctionComponentJsx",
-        "title": "React Arrow Function Component (jsx)"
+        "command": "canducci.js.statelessContext",
+        "title": "React Stateless Function Context (js)"
       },
       {
-        "command": "canducci.functionComponentJsx",
+        "command": "canducci.jsx.component",
         "title": "React Function Component (jsx)"
       },
       {
-        "command": "canducci.createContextArrowFunctionJsx",
-        "title": "React Arrow Function Context (jsx)"
+        "command": "canducci.jsx.statelessComponent",
+        "title": "React Stateless Function Component (jsx)"
       },
       {
-        "command": "canducci.createContextFunctionJsx",
+        "command": "canducci.jsx.context",
         "title": "React Function Context (jsx)"
       },
       {
-        "command": "canducci.arrowFunctionComponentTs",
-        "title": "React Arrow Function Component (tsx)"
+        "command": "canducci.jsx.statelessContext",
+        "title": "React Stateless Function Context (jsx)"
       },
       {
-        "command": "canducci.functionComponentTs",
+        "command": "canducci.tsx.component",
         "title": "React Function Component (tsx)"
       },
       {
-        "command": "canducci.arrowFunctionContextTs",
-        "title": "React Arrow Function Context (tsx)"
+        "command": "canducci.tsx.statelessComponent",
+        "title": "React Stateless Function Component (tsx)"
       },
       {
-        "command": "canducci.functionContextTs",
+        "command": "canducci.tsx.context",
         "title": "React Function Context (tsx)"
+      },
+      {
+        "command": "canducci.tsx.statelessContext",
+        "title": "React Stateless Function Context (tsx)"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "canducci.arrowFunctionComponentJs",
+          "command": "canducci.js.component",
           "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.functionComponentJs",
+          "command": "canducci.js.statelessComponent",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.arrowFunctionComponentJsx",
+          "command": "canducci.js.context",
           "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.functionComponentJsx",
+          "command": "canducci.js.statelessContext",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.createContextArrowFunctionJs",
+          "command": "canducci.jsx.component",
           "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.createContextFunctionJs",
+          "command": "canducci.jsx.statelessComponent",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.createContextArrowFunctionJsx",
+          "command": "canducci.jsx.context",
           "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.createContextFunctionJsx",
+          "command": "canducci.jsx.statelessContext",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.arrowFunctionComponentTs",
+          "command": "canducci.tsx.component",
           "group": "1_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.functionComponentTs",
+          "command": "canducci.tsx.statelessComponent",
           "group": "2_modification",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "canducci.functionContextTs",
-          "group": "2_modification",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "canducci.arrowFunctionContextTs",
+          "command": "canducci.tsx.context",
           "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "canducci.tsx.statelessContext",
+          "group": "2_modification",
           "when": "explorerResourceIsFolder"
         }
       ]

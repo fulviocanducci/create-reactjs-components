@@ -1,7 +1,7 @@
 import { IComponentReturn } from './types';
 
 /** Base - Component */
-export function functionComponentBase(name: string, extension: string): IComponentReturn {
+export function componentBase(name: string, extension: string): IComponentReturn {
   return {
     extension: extension,
     content: `
@@ -16,7 +16,7 @@ export default ${name};
   };
 }
 
-export function arrowFunctionComponentBase(name: string, extension: string): IComponentReturn {
+export function statelessComponentBase(name: string, extension: string): IComponentReturn {
   return {
     extension: extension,
     content: `
@@ -32,7 +32,7 @@ export default ${name};
 }
 
 /** Base - ContextApi */
-export function createContextArrowFunctionBase(name: string, extension: string): IComponentReturn {
+export function statelessContextBase(name: string, extension: string): IComponentReturn {
   return {
     extension: extension,
     content: `  
@@ -53,7 +53,7 @@ export default ${name}ContextProvider;
   };
 }
 
-export function createContextFunctionBase(name: string, extension: string): IComponentReturn {
+export function contextBase(name: string, extension: string): IComponentReturn {
   return {
     extension: extension,
     content: `  
@@ -75,7 +75,7 @@ export default ${name}ContextProvider;
 }
 
 /** base - typescript */
-export function functionComponentTypescriptBase(name: string, extension: string): IComponentReturn {
+export function componentTypescriptBase(name: string, extension: string): IComponentReturn {
   return {
     extension: extension,
     content: `
@@ -92,7 +92,7 @@ export default ${name};
   };
 }
 
-export function arrowFunctionComponentTypescriptBase(
+export function statelessComponentTypescriptBase(
   name: string,
   extension: string
 ): IComponentReturn {
@@ -111,7 +111,7 @@ export default ${name};
     `,
   };
 }
-export function functionContextTypescriptBase(name: string, extension: string): IComponentReturn {
+export function contextTypescriptBase(name: string, extension: string): IComponentReturn {
   return {
     extension: extension,
     content: `
@@ -137,10 +137,7 @@ export default ${name}Provider;`,
   };
 }
 
-export function arrowFunctionContextTypescriptBase(
-  name: string,
-  extension: string
-): IComponentReturn {
+export function statelessContextTypescriptBase(name: string, extension: string): IComponentReturn {
   return {
     extension: extension,
     content: `

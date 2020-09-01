@@ -1,15 +1,20 @@
 import {
-  arrowFunctionComponentTypescriptBase,
-  arrowFunctionContextTypescriptBase,
-  functionComponentTypescriptBase,
-  functionContextTypescriptBase,
-} from './base/index';
+  componentTypescriptBase,
+  contextTypescriptBase,
+  statelessComponentTypescriptBase,
+  statelessContextTypescriptBase,
+} from './base';
 
-const arrowFunctionComponentTs = (name: string) =>
-  arrowFunctionComponentTypescriptBase(name, 'tsx');
-const functionComponentTs = (name: string) => functionComponentTypescriptBase(name, 'tsx');
+const component = (name: string) => componentTypescriptBase(name, 'tsx');
+const statelessComponent = (name: string) => statelessComponentTypescriptBase(name, 'tsx');
+const context = (name: string) => contextTypescriptBase(name, 'tsx');
+const statelessContext = (name: string) => statelessContextTypescriptBase(name, 'tsx');
 
-const functionContextTs = (name: string) => functionContextTypescriptBase(name, 'tsx');
-const arrowFunctionContextTs = (name: string) => arrowFunctionContextTypescriptBase(name, 'tsx');
+const tsx = {
+  component,
+  context,
+  statelessComponent,
+  statelessContext,
+};
 
-export { arrowFunctionComponentTs, functionComponentTs, functionContextTs, arrowFunctionContextTs };
+export default tsx;

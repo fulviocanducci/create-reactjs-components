@@ -1,19 +1,15 @@
-import {
-  arrowFunctionComponentBase,
-  createContextArrowFunctionBase,
-  createContextFunctionBase,
-  functionComponentBase,
-} from './base/index';
+import { componentBase, contextBase, statelessComponentBase, statelessContextBase } from './base';
 
-const arrowFunctionComponentJs = (name: string) => arrowFunctionComponentBase(name, 'js');
-const functionComponentJs = (name: string) => functionComponentBase(name, 'js');
+const component = (name: string) => componentBase(name, 'js');
+const statelessComponent = (name: string) => statelessComponentBase(name, 'js');
+const context = (name: string) => contextBase(name, 'js');
+const statelessContext = (name: string) => statelessContextBase(name, 'js');
 
-const createContextArrowFunctionJs = (name: string) => createContextArrowFunctionBase(name, 'js');
-const createContextFunctionJs = (name: string) => createContextFunctionBase(name, 'js');
-
-export {
-  functionComponentJs,
-  arrowFunctionComponentJs,
-  createContextArrowFunctionJs,
-  createContextFunctionJs,
+const js = {
+  component,
+  context,
+  statelessComponent,
+  statelessContext,
 };
+
+export default js;

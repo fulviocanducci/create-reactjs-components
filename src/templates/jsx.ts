@@ -1,19 +1,15 @@
-import {
-  arrowFunctionComponentBase,
-  createContextArrowFunctionBase,
-  createContextFunctionBase,
-  functionComponentBase,
-} from './base/index';
+import { componentBase, contextBase, statelessComponentBase, statelessContextBase } from './base';
 
-const arrowFunctionComponentJsx = (name: string) => arrowFunctionComponentBase(name, 'jsx');
-const functionComponentJsx = (name: string) => functionComponentBase(name, 'jsx');
+const component = (name: string) => componentBase(name, 'jsx');
+const statelessComponent = (name: string) => statelessComponentBase(name, 'jsx');
+const context = (name: string) => contextBase(name, 'jsx');
+const statelessContext = (name: string) => statelessContextBase(name, 'jsx');
 
-const createContextArrowFunctionJsx = (name: string) => createContextArrowFunctionBase(name, 'jsx');
-const createContextFunctionJsx = (name: string) => createContextFunctionBase(name, 'jsx');
-
-export {
-  arrowFunctionComponentJsx,
-  functionComponentJsx,
-  createContextArrowFunctionJsx,
-  createContextFunctionJsx,
+const jsx = {
+  component,
+  context,
+  statelessComponent,
+  statelessContext,
 };
+
+export default jsx;

@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as path from 'path';
 import * as vscode from 'vscode';
 
 export function mergerDir(...values: Array<string>): string {
@@ -9,11 +10,11 @@ export function getProjetctRoot(): string {
   return (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
 }
 
-export function getProjectComponentFolder(name: string, sep: string): string {
+export function componentFolder(name: string, sep: string): string {
   return mergerDir(getProjetctRoot(), sep, 'src', sep, 'components', sep, name);
 }
 
-export function getProjectContextFolder(name: string, sep: string): string {
+export function contextFolder(name: string, sep: string): string {
   return mergerDir(getProjetctRoot(), sep, 'src', sep, 'contexts', sep, name);
 }
 
@@ -56,3 +57,32 @@ export const optionsFileName = (title: string): vscode.InputBoxOptions => {
     valueSelection: [-1, -1],
   };
 };
+
+export async function createCommand(
+  args: any,
+  callBackTemplate: Function,
+  callBackFolder: Function,
+  title: string
+) {
+  const { showInputBox, showErrorMessage, showInformationMessage } = vscode.window;
+  const name = await showInputBox(optionsFileName(title));
+  if (!name) {
+    showErrorMessage('Operation canceled !!!');
+  } else {
+    const dir = callBackFolder(name, path.sep);
+    const { content, extension } = callBackTemplate(name);
+    const dirFile = mergerDir(dir, path.sep, 'index.', extension);
+    try {
+      if (!existsDir(dir)) {
+        createDir(dir);
+        createFile(dirFile, content);
+        openFileCreated(dirFile);
+        showInformationMessage(`${title} successfully created.`);
+      } else {
+        showInformationMessage(`${title} exists`);
+      }
+    } catch (error) {
+      showInformationMessage(error);
+    }
+  }
+}
