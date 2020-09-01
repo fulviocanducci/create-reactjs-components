@@ -1,12 +1,8 @@
 import { IComponentReturn } from './types';
 
 /** Base - Component */
-export function functionComponentBase(
-  name: string,
-  extension: string
-): IComponentReturn {
+export function functionComponentBase(name: string, extension: string): IComponentReturn {
   return {
-    title: 'Component',
     extension: extension,
     content: `
 import React from 'react';
@@ -20,12 +16,8 @@ export default ${name};
   };
 }
 
-export function arrowFunctionComponentBase(
-  name: string,
-  extension: string
-): IComponentReturn {
+export function arrowFunctionComponentBase(name: string, extension: string): IComponentReturn {
   return {
-    title: 'Component',
     extension: extension,
     content: `
 import React from 'react';
@@ -40,12 +32,8 @@ export default ${name};
 }
 
 /** Base - ContextApi */
-export function createContextArrowFunctionBase(
-  name: string,
-  extension: string
-): IComponentReturn {
+export function createContextArrowFunctionBase(name: string, extension: string): IComponentReturn {
   return {
-    title: 'Context',
     extension: extension,
     content: `  
 import React, { createContext } from "react";
@@ -65,12 +53,8 @@ export default ${name}ContextProvider;
   };
 }
 
-export function createContextFunctionBase(
-  name: string,
-  extension: string
-): IComponentReturn {
+export function createContextFunctionBase(name: string, extension: string): IComponentReturn {
   return {
-    title: 'Context',
     extension: extension,
     content: `  
 import React, { createContext } from "react";
@@ -91,12 +75,8 @@ export default ${name}ContextProvider;
 }
 
 /** base - typescript */
-export function functionComponentTypescriptBase(
-  name: string,
-  extension: string
-): IComponentReturn {
+export function functionComponentTypescriptBase(name: string, extension: string): IComponentReturn {
   return {
-    title: 'Component',
     extension: extension,
     content: `
 import React from 'react';
@@ -117,7 +97,6 @@ export function arrowFunctionComponentTypescriptBase(
   extension: string
 ): IComponentReturn {
   return {
-    title: 'Component',
     extension: extension,
     content: `
 import React, { FC } from 'react';
@@ -132,12 +111,8 @@ export default ${name};
     `,
   };
 }
-export function functionContextTypescriptBase(
-  name: string,
-  extension: string
-): IComponentReturn {
+export function functionContextTypescriptBase(name: string, extension: string): IComponentReturn {
   return {
-    title: 'Context',
     extension: extension,
     content: `
 import React, { createContext, ReactNode } from 'react';
@@ -167,7 +142,6 @@ export function arrowFunctionContextTypescriptBase(
   extension: string
 ): IComponentReturn {
   return {
-    title: 'Context',
     extension: extension,
     content: `
 import React, { createContext, FC, ReactNode } from 'react';

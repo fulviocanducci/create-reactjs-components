@@ -4,14 +4,12 @@ import {
   createContextFunctionBase,
   functionComponentBase,
 } from './base/index';
-const arrowFunctionComponentJs = (name: string) =>
-  arrowFunctionComponentBase(name, 'js');
+
+const arrowFunctionComponentJs = (name: string) => arrowFunctionComponentBase(name, 'js');
 const functionComponentJs = (name: string) => functionComponentBase(name, 'js');
 
-const createContextArrowFunctionJs = (name: string) =>
-  createContextArrowFunctionBase(name, 'js');
-const createContextFunctionJs = (name: string) =>
-  createContextFunctionBase(name, 'js');
+const createContextArrowFunctionJs = (name: string) => createContextArrowFunctionBase(name, 'js');
+const createContextFunctionJs = (name: string) => createContextFunctionBase(name, 'js');
 
 export {
   functionComponentJs,

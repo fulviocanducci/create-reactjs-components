@@ -48,9 +48,11 @@ export function openFileCreated(dirFile: string) {
   }, 50);
 }
 
-export const optionsFileName: vscode.InputBoxOptions = {
-  prompt: `Enter the name:`,
-  placeHolder: `Component name`,
-  ignoreFocusOut: true,
-  valueSelection: [-1, -1],
+export const optionsFileName = (title: string): vscode.InputBoxOptions => {
+  return {
+    prompt: `Enter the ${title.toLowerCase()} name: `,
+    placeHolder: `${title} name`,
+    ignoreFocusOut: true,
+    valueSelection: [-1, -1],
+  };
 };

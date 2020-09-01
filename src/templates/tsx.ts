@@ -7,18 +7,9 @@ import {
 
 const arrowFunctionComponentTs = (name: string) =>
   arrowFunctionComponentTypescriptBase(name, 'tsx');
+const functionComponentTs = (name: string) => functionComponentTypescriptBase(name, 'tsx');
 
-const functionComponentTs = (name: string) =>
-  functionComponentTypescriptBase(name, 'tsx');
+const functionContextTs = (name: string) => functionContextTypescriptBase(name, 'tsx');
+const arrowFunctionContextTs = (name: string) => arrowFunctionContextTypescriptBase(name, 'tsx');
 
-const functionContextTs = (name: string) =>
-  functionContextTypescriptBase(name, 'tsx');
-const arrowFunctionContextTs = (name: string) =>
-  arrowFunctionContextTypescriptBase(name, 'tsx');
-
-export {
-  arrowFunctionComponentTs,
-  functionComponentTs,
-  functionContextTs,
-  arrowFunctionContextTs,
-};
+export { arrowFunctionComponentTs, functionComponentTs, functionContextTs, arrowFunctionContextTs };

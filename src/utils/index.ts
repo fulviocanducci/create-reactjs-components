@@ -9,22 +9,19 @@ import {
   optionsFileName,
 } from './operations';
 
-async function createComponent(
+async function createCommand(
   args: any,
   callBackTemplate: Function,
-  callBackFolder: Function
+  callBackFolder: Function,
+  title: string
 ) {
-  const {
-    showInputBox,
-    showErrorMessage,
-    showInformationMessage,
-  } = vscode.window;
-  const name = await showInputBox(optionsFileName);
+  const { showInputBox, showErrorMessage, showInformationMessage } = vscode.window;
+  const name = await showInputBox(optionsFileName(title));
   if (!name) {
     showErrorMessage('Operation canceled !!!');
   } else {
     const dir = callBackFolder(name, path.sep);
-    const { content, extension, title } = callBackTemplate(name);
+    const { content, extension } = callBackTemplate(name);
     const dirFile = mergerDir(dir, path.sep, 'index.', extension);
     try {
       if (!existsDir(dir)) {
@@ -41,4 +38,4 @@ async function createComponent(
   }
 }
 
-export default createComponent;
+export default createCommand;

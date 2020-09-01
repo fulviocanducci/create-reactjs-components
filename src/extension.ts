@@ -17,11 +17,8 @@ import {
   functionComponentTs,
   functionContextTs,
 } from './templates/tsx';
-import createComponent from './utils/index';
-import {
-  getProjectComponentFolder,
-  getProjectContextFolder,
-} from './utils/operations';
+import { default as createCommand, default as createComponent } from './utils/index';
+import { getProjectComponentFolder, getProjectContextFolder } from './utils/operations';
 
 export function activate(context: vscode.ExtensionContext) {
   const { registerCommand } = vscode.commands;
@@ -30,108 +27,64 @@ export function activate(context: vscode.ExtensionContext) {
     registerCommand(
       'canducci.arrowFunctionComponentJs',
       async (args: any) =>
-        await createComponent(
-          args,
-          arrowFunctionComponentJs,
-          getProjectComponentFolder
-        )
+        await createCommand(args, arrowFunctionComponentJs, getProjectComponentFolder, 'Component')
     ),
     registerCommand(
       'canducci.functionComponentJs',
       async (args: any) =>
-        await createComponent(
-          args,
-          functionComponentJs,
-          getProjectComponentFolder
-        )
+        await createCommand(args, functionComponentJs, getProjectComponentFolder, 'Component')
     ),
     registerCommand(
       'canducci.createContextArrowFunctionJs',
       async (args: any) =>
-        await createComponent(
-          args,
-          createContextArrowFunctionJs,
-          getProjectContextFolder
-        )
+        await createCommand(args, createContextArrowFunctionJs, getProjectContextFolder, 'Context')
     ),
     registerCommand(
       'canducci.createContextFunctionJs',
       async (args: any) =>
-        await createComponent(
-          args,
-          createContextFunctionJs,
-          getProjectContextFolder
-        )
+        await createCommand(args, createContextFunctionJs, getProjectContextFolder, 'Context')
     ),
     /*JavascriptReact*/
     registerCommand(
       'canducci.arrowFunctionComponentJsx',
       async (args: any) =>
-        await createComponent(
-          args,
-          arrowFunctionComponentJsx,
-          getProjectComponentFolder
-        )
+        await createCommand(args, arrowFunctionComponentJsx, getProjectComponentFolder, 'Component')
     ),
     registerCommand(
       'canducci.functionComponentJsx',
       async (args: any) =>
-        await createComponent(
-          args,
-          functionComponentJsx,
-          getProjectComponentFolder
-        )
+        await createCommand(args, functionComponentJsx, getProjectComponentFolder, 'Component')
     ),
     registerCommand(
       'canducci.createContextArrowFunctionJsx',
       async (args: any) =>
-        await createComponent(
-          args,
-          createContextArrowFunctionJsx,
-          getProjectContextFolder
-        )
+        await createCommand(args, createContextArrowFunctionJsx, getProjectContextFolder, 'Context')
     ),
     registerCommand(
       'canducci.createContextFunctionJsx',
       async (args: any) =>
-        await createComponent(
-          args,
-          createContextFunctionJsx,
-          getProjectContextFolder
-        )
+        await createCommand(args, createContextFunctionJsx, getProjectContextFolder, 'Context')
     ),
     /* React Typescript*/
     registerCommand(
       'canducci.arrowFunctionComponentTs',
       async (args: any) =>
-        await createComponent(
-          args,
-          arrowFunctionComponentTs,
-          getProjectComponentFolder
-        )
+        await createCommand(args, arrowFunctionComponentTs, getProjectComponentFolder, 'Component')
     ),
     registerCommand(
       'canducci.functionComponentTs',
       async (args: any) =>
-        await createComponent(
-          args,
-          functionComponentTs,
-          getProjectComponentFolder
-        )
+        await createComponent(args, functionComponentTs, getProjectComponentFolder, 'Component')
     ),
     registerCommand(
       'canducci.functionContextTs',
       async (args: any) =>
-        await createComponent(args, functionContextTs, getProjectContextFolder)
+        await createComponent(args, functionContextTs, getProjectContextFolder, 'Context')
     ),
     registerCommand(
       'canducci.arrowFunctionContextTs',
       async (args: any) =>
-        await createComponent(
-          args,
-          arrowFunctionContextTs,
-          getProjectContextFolder
-        )
+        await createComponent(args, arrowFunctionContextTs, getProjectContextFolder, 'Context')
     ),
   ];
 
