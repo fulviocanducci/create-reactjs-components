@@ -1,3 +1,3 @@
-import { componentFolder, contextFolder, createCommand } from './operations';
+import { componentPath, contextPath, createCommandAsync } from './operations';
 
-export { contextFolder, componentFolder, createCommand };
+export { contextPath, componentPath, createCommandAsync };

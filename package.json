@@ -1,12 +1,16 @@
 {
   "name": "create-reactjs-components",
-  "displayName": "create-reactjs-components",
-  "description": "Create Component and Context",
-  "version": "1.2.1",
+  "displayName": "Create React Component and Context",
+  "description": "Create React Component and Context",
+  "version": "1.2.2",
   "publisher": "canducci",
   "icon": "images/logo-three.png",
   "engines": {
     "vscode": "^1.48.0"
+  },
+  "galleryBanner": {
+    "theme": "dark",
+    "color": "#3f79a5"
   },
   "author": {
     "email": "fulviocanducci@hotmail.com",
@@ -171,16 +175,19 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.48.0",
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.0",
     "@types/node": "^14.0.27",
-    "eslint": "^7.6.0",
+    "@types/vscode": "^1.48.0",
     "@typescript-eslint/eslint-plugin": "^3.8.0",
     "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
     "glob": "^7.1.6",
     "mocha": "^8.0.1",
     "typescript": "^3.8.3",
     "vscode-test": "^1.4.0"
+  },
+  "dependencies": {
+    "pascal-case": "^3.1.1"
   }
 }

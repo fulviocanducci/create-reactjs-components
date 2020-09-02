@@ -1,55 +1,56 @@
 import * as fs from 'fs';
+import { pascalCase } from 'pascal-case';
 import * as path from 'path';
 import * as vscode from 'vscode';
 
-export function mergerDir(...values: Array<string>): string {
-  return values.join('');
+interface IPath {
+  dir: string;
+  file: string;
 }
 
-export function getProjetctRoot(): string {
-  return (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
-}
+const joinDir = (...values: Array<string>): string => values.join('');
 
-export function componentFolder(name: string, sep: string): string {
-  return mergerDir(getProjetctRoot(), sep, 'src', sep, 'components', sep, name);
-}
+const getPath = (name: string, type: string, extension: string): IPath => {
+  const fsPath = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
+  const sep = path.sep;
+  const dir = joinDir(fsPath, sep, 'src', sep, type, sep, name);
+  const file = joinDir(dir, path.sep, 'index.', extension);
+  return {
+    dir,
+    file,
+  };
+};
 
-export function contextFolder(name: string, sep: string): string {
-  return mergerDir(getProjetctRoot(), sep, 'src', sep, 'contexts', sep, name);
-}
+export const componentPath = (name: string, extension: string): IPath =>
+  getPath(name, 'components', extension);
 
-export function existsDir(dir: string): boolean {
-  return fs.existsSync(dir);
-}
+export const contextPath = (name: string, extension: string): IPath =>
+  getPath(name, 'contexts', extension);
 
-export function createDir(dir: string): boolean {
+const existsDir = (dir: string): boolean => fs.existsSync(dir);
+
+const createDir = (dir: string) => {
   try {
-    fs.mkdirSync(dir, { recursive: true });
-    return true;
+    return fs.mkdirSync(dir, { recursive: true });
   } catch (error) {}
-  return false;
-}
+};
 
-export function createFile(dirFile: string, context: string): boolean {
+const createFile = (file: string, context: string) => {
   try {
-    fs.writeFileSync(dirFile, context.trimLeft().trimRight());
-    return true;
+    fs.writeFileSync(file, context.trimLeft().trimRight());
   } catch (error) {}
-  return false;
-}
+};
 
-export function openFileCreated(dirFile: string) {
-  setTimeout(() => {
-    vscode.workspace.openTextDocument(dirFile).then((editor) => {
-      if (!editor) {
-        return;
-      }
-      vscode.window.showTextDocument(editor);
-    });
-  }, 50);
-}
+const openFile = (file: string) => {
+  vscode.workspace.openTextDocument(file).then((editor) => {
+    if (!editor) {
+      return;
+    }
+    vscode.window.showTextDocument(editor, { preview: false });
+  });
+};
 
-export const optionsFileName = (title: string): vscode.InputBoxOptions => {
+const optionsFileName = (title: string): vscode.InputBoxOptions => {
   return {
     prompt: `Enter the ${title.toLowerCase()} name: `,
     placeHolder: `${title} name`,
@@ -58,31 +59,62 @@ export const optionsFileName = (title: string): vscode.InputBoxOptions => {
   };
 };
 
-export async function createCommand(
+const multiNames = (name: string): Array<string> => {
+  const names: Array<string> = name.split(new RegExp('[,;]')).map((v) => pascalCase(v.trim()));
+  return names;
+};
+
+const nameRules = (name: string | null): boolean => {
+  return (
+    name !== null &&
+    name.length > 0 &&
+    ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(name.charAt(0)) === false
+  );
+};
+
+export const createCommandAsync = async (
   args: any,
   callBackTemplate: Function,
   callBackFolder: Function,
   title: string
-) {
+) => {
   const { showInputBox, showErrorMessage, showInformationMessage } = vscode.window;
-  const name = await showInputBox(optionsFileName(title));
-  if (!name) {
+  let names = await showInputBox(optionsFileName(title));
+  if (!names) {
     showErrorMessage('Operation canceled !!!');
   } else {
-    const dir = callBackFolder(name, path.sep);
-    const { content, extension } = callBackTemplate(name);
-    const dirFile = mergerDir(dir, path.sep, 'index.', extension);
-    try {
-      if (!existsDir(dir)) {
-        createDir(dir);
-        createFile(dirFile, content);
-        openFileCreated(dirFile);
-        showInformationMessage(`${title} successfully created.`);
+    let created: Array<string> = [];
+    let existed: Array<string> = [];
+    let errors: Array<string> = [];
+    for (const name of multiNames(names)) {
+      if (nameRules(name)) {
+        const { content, extension } = callBackTemplate(name);
+        const { dir, file } = callBackFolder(name, extension);
+        try {
+          if (!existsDir(dir)) {
+            createDir(dir);
+            createFile(file, content);
+            openFile(file);
+            created.push(name);
+          } else {
+            existed.push(name);
+          }
+        } catch (error) {
+          await showErrorMessage(error);
+        }
       } else {
-        showInformationMessage(`${title} exists`);
+        errors.push(name.length === 0 ? 'empty' : name);
       }
-    } catch (error) {
-      showInformationMessage(error);
+    }
+
+    if (created.length > 0) {
+      showInformationMessage(`${title} ${created.join(', ')} successfully created.`);
+    }
+    if (existed.length > 0) {
+      showInformationMessage(`${title} ${existed.join(', ')} exists.`);
+    }
+    if (errors.length > 0) {
+      showErrorMessage(`${title} ${errors.join(', ')} is invalid.`);
     }
   }
-}
+};

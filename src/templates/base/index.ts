@@ -40,7 +40,7 @@ import React, { createContext } from "react";
 
 const ${name}Context = createContext();
 
-const ${name}ContextProvider = ({ children }) => {
+const ${name}Provider = ({ children }) => {
   return (
     <${name}Context.Provider value={{ }}>
       {children}
@@ -48,7 +48,7 @@ const ${name}ContextProvider = ({ children }) => {
   );
 }
 
-export default ${name}ContextProvider;
+export default ${name}Provider;
 `,
   };
 }
@@ -61,7 +61,7 @@ import React, { createContext } from "react";
 
 const ${name}Context = createContext();
 
-function ${name}ContextProvider({ children }) {
+function ${name}Provider({ children }) {
   return (
     <${name}Context.Provider value={{ }}>
       {children}
@@ -69,7 +69,7 @@ function ${name}ContextProvider({ children }) {
   );
 }
 
-export default ${name}ContextProvider;
+export default ${name}Provider;
 `,
   };
 }
