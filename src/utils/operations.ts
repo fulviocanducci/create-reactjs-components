@@ -52,15 +52,15 @@ const openFile = (file: string) => {
 
 const optionsFileName = (title: string): vscode.InputBoxOptions => {
   return {
-    prompt: `Enter the ${title.toLowerCase()} name: `,
-    placeHolder: `${title} name`,
+    prompt: `Enter the name or names separated by commas: `,
+    placeHolder: `${title}: enter name or names separated by commas`,
     ignoreFocusOut: true,
     valueSelection: [-1, -1],
   };
 };
 
 const multiNames = (name: string): Array<string> => {
-  const names: Array<string> = name.split(new RegExp('[,;]')).map((v) => pascalCase(v.trim()));
+  const names: Array<string> = name.split(',').map((v) => pascalCase(v.trim()));
   return names;
 };
 

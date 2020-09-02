@@ -8,6 +8,7 @@
   "engines": {
     "vscode": "^1.48.0"
   },
+  "license": "MIT",
   "galleryBanner": {
     "theme": "dark",
     "color": "#3f79a5"

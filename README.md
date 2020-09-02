@@ -48,6 +48,35 @@ In the Context Menu choose:
 
 ### Menu:
 
-[![Image](https://raw.githubusercontent.com/fulviocanducci/create-reactjs-components/master/images/menu.png)]()
+[![Image](https://raw.githubusercontent.com/fulviocanducci/fulviocanducci/master/images/canducci.create-reactjs-components.menu.png)]()
 
-[![Image](https://raw.githubusercontent.com/fulviocanducci/create-reactjs-components/master/images/ctrlp.png)]()
+---
+
+[![Image](https://raw.githubusercontent.com/fulviocanducci/fulviocanducci/master/images/canducci.create-reactjs-components.ctrlp.png)]()
+
+### Usage:
+
+In the box provided, type the name of the component, which may vary as follows:
+
+1. A simple name, example: counter
+
+   A component or context is created respectively, the name entered is the folder and within that folder an `index.js|jsx|tsx`.
+
+2. Several names separated by commas, example: counter, header, footer
+
+   A component or context is created respectively, the names entered are separated into folders and within each folder an `index.js|jsx|tsx`.
+
+3. Names separated by periods are compound words, example: `app.web`, `header.counter`, etc.
+
+   If the name (s) are a period separating it means that your initials will be in uppercase, example: `AppWeb`, `HeaderCounter` and the others name follows the same PascalCase nomenclature, exemplo: `Counter`, `App`, etc.
+
+4. Name with numeric initials will not be accepted
+   Example names: 1Header, 2Web are not accepted
+
+### Example:
+
+[![Image](https://raw.githubusercontent.com/fulviocanducci/fulviocanducci/master/images/caducci.create-reactjs-componente.inputbox.png)]()
+
+---
+
+[![Image](https://raw.githubusercontent.com/fulviocanducci/fulviocanducci/master/images/caducci.create-reactjs-componente.filecreated.png)]()
