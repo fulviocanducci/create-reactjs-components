@@ -88,7 +88,7 @@ function ${name}({ }: ${name}Props) {
 }
 
 export default ${name};
-    `,
+`,
   };
 }
 
@@ -99,11 +99,11 @@ export function statelessComponentTypescriptBase(
   return {
     extension: extension,
     content: `
-import React, { FC } from 'react';
+import React from 'react';
 
 interface ${name}Props {}
 
-const ${name}: FC<${name}Props> = ({ }:${name}Props) => {
+const ${name} = ({ }:${name}Props) => {
   return <div>${name}</div>;
 };
 
@@ -117,13 +117,13 @@ export function contextTypescriptBase(name: string, extension: string): ICompone
     content: `
 import React, { createContext, ReactNode } from 'react';
 
+interface ${name}ContextProps { }
+
 interface ${name}ProviderProps {
   children: ReactNode;
 }
 
-interface ${name}Props { }
-
-export const ${name}Context = createContext<${name}Props>({} as ${name}Props);
+export const ${name}Context = createContext<${name}ContextProps>({} as ${name}ContextProps);
 
 function ${name}Provider({ children }: ${name}ProviderProps) {  
   return (
@@ -141,15 +141,20 @@ export function statelessContextTypescriptBase(name: string, extension: string):
   return {
     extension: extension,
     content: `
-import React, { createContext, FC, ReactNode } from 'react';
+import React, { createContext, ReactNode } from 'react';
 
 interface ${name}ContextProps { }
+
+interface ${name}ProviderProps { 
+  children: ReactNode;
+}
 
 export const ${name}Context = createContext<${name}ContextProps>(
   {} as ${name}ContextProps
 );
 
-const ${name}Provider: FC<{ children: ReactNode }> = ({ children }) => {
+
+const ${name}Provider = ({ children }: ${name}ProviderProps) => {
 return (
     <${name}Context.Provider value={{ }}>
       {children}

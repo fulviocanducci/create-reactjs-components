@@ -8,3 +8,9 @@ https://www.robinwieruch.de/react-function-component
 https://code.visualstudio.com/api/references/contribution-points#contributes.views
 
 https://code.visualstudio.com/api/references/contribution-points#contributes.commands
+
+https://www.red-gate.com/simple-talk/dotnet/net-development/writing-vs-code-extensions-typescript/
+
+explorerResourceIsFolder
+
+explorerViewletFocus

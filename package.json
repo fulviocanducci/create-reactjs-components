@@ -107,62 +107,62 @@
         {
           "command": "canducci.js.component",
           "group": "1_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus && resourceLangId == javascript || resourceLangId == javascriptreact || resourceLangId == typescriptreact"
         },
         {
           "command": "canducci.js.statelessComponent",
           "group": "2_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus && resourceLangId == javascript || resourceLangId == javascriptreact || resourceLangId == typescriptreact"
         },
         {
           "command": "canducci.js.context",
           "group": "1_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.js.statelessContext",
           "group": "2_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.jsx.component",
           "group": "1_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.jsx.statelessComponent",
           "group": "2_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.jsx.context",
           "group": "1_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.jsx.statelessContext",
           "group": "2_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.tsx.component",
           "group": "1_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.tsx.statelessComponent",
           "group": "2_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.tsx.context",
           "group": "1_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.tsx.statelessContext",
           "group": "2_modification",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerViewletFocus"
         }
       ]
     }
