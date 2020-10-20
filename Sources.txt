@@ -14,3 +14,14 @@ https://www.red-gate.com/simple-talk/dotnet/net-development/writing-vs-code-exte
 explorerResourceIsFolder
 
 explorerViewletFocus
+
+https://github.com/ricardoemerson/create-react-tsx-component
+
+https://code.visualstudio.com/api/references/contribution-points
+
+https://code.visualstudio.com/docs/getstarted/keybindings#_when-clause-contexts
+explorerViewletVisible	True if Explorer view is visible.
+explorerViewletFocus	True if Explorer view has keyboard focus.
+filesExplorerFocus	True if File Explorer section has keyboard focus.
+openEditorsFocus	True if OPEN EDITORS section has keyboard focus.
+explorerResourceIsFolder	True if a folder is selected in the Explorer.

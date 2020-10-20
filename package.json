@@ -2,7 +2,7 @@
   "name": "create-reactjs-components",
   "displayName": "Create React Component and Context",
   "description": "Create React Component and Context",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "publisher": "canducci",
   "icon": "images/logo-three.png",
   "engines": {
@@ -37,6 +37,9 @@
     "tsx"
   ],
   "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
     "onCommand:canducci.js.component",
     "onCommand:canducci.js.statelessComponent",
     "onCommand:canducci.js.context",
@@ -107,12 +110,12 @@
         {
           "command": "canducci.js.component",
           "group": "1_modification",
-          "when": "explorerViewletFocus && resourceLangId == javascript || resourceLangId == javascriptreact || resourceLangId == typescriptreact"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.js.statelessComponent",
           "group": "2_modification",
-          "when": "explorerViewletFocus && resourceLangId == javascript || resourceLangId == javascriptreact || resourceLangId == typescriptreact"
+          "when": "explorerViewletFocus"
         },
         {
           "command": "canducci.js.context",
